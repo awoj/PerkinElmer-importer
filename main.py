@@ -45,7 +45,7 @@ if not dir:
 samples = glob.glob(os.path.join(dir, '*.Sample.csv'))
 
 #list of all Blank files
-includeBlank = 0;
+includeBlank = 0
 if includeBlank:
     blanks = glob.glob(os.path.join(dir, '*.Blank.csv'))
 else:
@@ -66,7 +66,7 @@ for entry in allFiles:
 
 #prompt output save location
 f = filedialog.asksaveasfile(mode='w', defaultextension=".csv")
-if f is None:
+if not f:
     sys.exit(0)
 f.write(output)
 f.close()
